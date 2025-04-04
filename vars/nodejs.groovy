@@ -38,17 +38,6 @@ def call() {
                     """
                 }
             }
-
-            post {
-                always {
-                    echo "Cleaning up workspace..."
-                    deleteDir()
-                    sh """
-                    sh "echo Cleaning up ${env.WORKSPACE}"
-                    sh "rm -rf ${env.WORKSPACE}"
-                    """
-                }
-            }
         }
     }
 }
