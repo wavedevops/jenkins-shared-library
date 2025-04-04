@@ -44,9 +44,9 @@ def call() {
                     echo "Cleaning up workspace..."
                     deleteDir()
                     sh """
-                cd /home/ec2-user/workspace/
-                rm -rf _app-ci-pipeline_${component}_${env.TAG_NAME}
-                """
+                    sh "echo Cleaning up ${env.WORKSPACE}"
+                    sh "rm -rf ${env.WORKSPACE}"
+                    """
                 }
             }
         }
