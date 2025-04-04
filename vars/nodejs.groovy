@@ -53,7 +53,7 @@ def call() {
             success {
                 script {
                     if (env.TAG_NAME ==~ ".*") {
-                        sh 'rm -rf /home/ec2-user/*'
+                        //sh 'rm -rf /home/ec2-user/*'
                     }
                 }
             }
