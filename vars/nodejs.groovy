@@ -2,9 +2,9 @@ def call() {
     pipeline {
         agent { label 'workstation' }
 
-        environment {
-            component = "cart"
-        }
+        //environment {
+            //component = "cart"
+        //}
 
         stages {
 
