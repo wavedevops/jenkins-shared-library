@@ -38,6 +38,17 @@ def call() {
                     """
                 }
             }
+
+            post {
+                always {
+                    echo "Cleaning up workspace..."
+                    deleteDir()
+                    sh """
+                cd /home/ec2-user/workspace/
+                rm -rf _app-ci-pipeline_${component}_${env.TAG_NAME}
+                """
+                }
+            }
         }
     }
 }
@@ -46,5 +57,11 @@ def call() {
 //    always {
 //        echo "Cleaning up workspace..."
 //        deleteDir()
+//        sh '''
+//        cd /home/ec2-user/workspace/
+//        rm -rf _app-ci-pipeline_${component}_${env.TAG_NAME}
+//        '''
 //    }
 //}
+//cd /home/ec2-user/workspace/
+//        rm -rf _app-ci-pipeline_frontend_v1.0.0
