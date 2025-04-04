@@ -50,13 +50,13 @@ def call() {
                 deleteDir()
             }
 
-            success {
-                script {
-                    if (env.TAG_NAME ==~ ".*") {
-                        //sh 'rm -rf /home/ec2-user/*'
-                    }
-                }
-            }
+//            success {
+//                script {
+//                    if (env.TAG_NAME ==~ ".*") {
+//                        //sh 'rm -rf /home/ec2-user/*'
+//                    }
+//                }
+//            }
         }
     }
 }
